@@ -26,7 +26,7 @@ class Home extends StatelessWidget {
           Row(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image(
+              const Image(
                 image: AssetImage('assets/dogicon'),
               ),
               TextField(
