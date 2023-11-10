@@ -16,9 +16,12 @@ void main(List<String> args) {
         case '2':
           try {
             exibirListaIndice(listaUsuarios);
-          } on CustomException catch (e) {
-            print(e.cause);
+          } on RangeError {
+            print('Índice não existe');
           }
+          // catch (e) {
+          //   print(e.cause);
+          // }
 
           break;
 
@@ -44,13 +47,13 @@ cadastrarUsuario(List<String> listaUsuarios) {
 }
 
 exibirListaIndice(List<String> listaUsuarios) {
-  try {
-    print('Informe o índice do usuário que deseja exibir');
-    int indice = int.parse(stdin.readLineSync()!);
-    print(listaUsuarios[indice]);
-  } catch (e) {
-    throw CustomException('\nÍndice inválido');
-  }
+  // try {
+  print('Informe o índice do usuário que deseja exibir');
+  int indice = int.parse(stdin.readLineSync()!);
+  print(listaUsuarios[indice]);
+  // } catch (e) {
+  //   throw CustomException('\nÍndice inválido');
+  // }
 }
 
 exibirListaCompleta(List<String> listaUsuarios) {
